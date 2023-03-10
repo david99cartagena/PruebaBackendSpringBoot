@@ -4,30 +4,57 @@
  */
 package com.demo.controler;
 
+import com.demo.service.impl.FrutaServiceImpl;
+import entity.Fruta;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import ch.qos.logback.core.model.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import com.demo.interfaceService.IFrutaService;
-import com.demo.modelo.Fruta;
-
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
  * @author Pc_Estiven
  */
-@Controller
-@RequestMapping
+@RestController
+@RequestMapping("FrutaRepo")
 public class ControladorFruta {
 
     @Autowired
-    private IFrutaService service;
-    
-    public String listar(Model model);
-        List<Fruta>frutas=service.Listar();
-        model.addAttribute("frutas", frutas);
-        return "index";
+    private FrutaServiceImpl impl;
+
+    @GetMapping
+    @RequestMapping(value = "ListarFrutas", method = RequestMethod.GET)
+    public ResponseEntity<?> ListarFrutas() {
+        List<Fruta> listaFruta = this.impl.ListarFruta();
+        return ResponseEntity.ok(listaFruta);
     }
 
+    @PostMapping
+    @RequestMapping(value = "CrearFrutas", method = RequestMethod.POST)
+    public ResponseEntity<?> CrearFrutas(@RequestBody Fruta fruta) {
+        Fruta FrutaCreada = this.impl.CrearFruta(fruta);
+        return ResponseEntity.status(HttpStatus.CREATED).body(FrutaCreada);
+    }
+
+    @PutMapping
+    @RequestMapping(value = "ModificarFrutas", method = RequestMethod.PUT)
+    public ResponseEntity<?> ModificarFrutas(@RequestBody Fruta fruta) {
+        Fruta FrutaModificada = this.impl.ModificarFruta(fruta);
+        return ResponseEntity.status(HttpStatus.CREATED).body(FrutaModificada);
+    }
+
+    @GetMapping
+    @RequestMapping(value = "BuscarFruta/{id}", method = RequestMethod.GET)
+    public ResponseEntity<?> BuscarFruta(@PathVariable int id) {
+        Fruta fruta = this.impl.BuscarFruta(id);
+        return ResponseEntity.ok(fruta);
+    }
+
+    @DeleteMapping
+    @RequestMapping(value = "EliminarFruta/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<?> EliminarFruta(@PathVariable int id) {
+        this.impl.EliminarFruta(id);
+        return ResponseEntity.ok().build();
+    }
 }
