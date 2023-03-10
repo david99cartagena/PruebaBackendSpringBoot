@@ -1,14 +1,29 @@
-package com.demo.modelo;
+package entity;
 
+import jakarta.annotation.Generated;
+import jakarta.persistence.Column;
 import java.time.LocalDateTime;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Fruta")
 
 public class Fruta {
-	private int id;
-	private String tipo;
-        private int cantidad;
-        private float precio;
-        private LocalDateTime fechadecreacion;
-        private LocalDateTime fechadeactualizacion;
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    
+    private int id;
+    private String tipo;
+    private int cantidad;
+    private float precio;
+    private LocalDateTime fechadecreacion;
+    private LocalDateTime fechadeactualizacion;
 
     public Fruta() {
     }
@@ -69,6 +84,5 @@ public class Fruta {
     public void setFechadeactualizacion(LocalDateTime fechadeactualizacion) {
         this.fechadeactualizacion = fechadeactualizacion;
     }
-    
 
 }
