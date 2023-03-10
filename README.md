@@ -33,4 +33,5 @@ Revisar Carpeta Base de Datos
 Usar SpringToolSuite4 para abrir y ejecutar el proyecto
 
 > Revisar el archivo PruebaBackendSpringBoot\CrudPrueba\src\main\resources\application.properties
+#
 > Ajustar la configuracion
