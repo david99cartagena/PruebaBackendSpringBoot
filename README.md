@@ -1,37 +1,68 @@
-# PruebaBackendSpringBoot
-Prueba Crud con Spring Boot
+# 🧪 PruebaBackendSpringBoot
 
-## Construido con 🛠️
+Este proyecto es una prueba técnica CRUD desarrollada con **Spring Boot**, utilizando **MySQL** como base de datos relacional y herramientas modernas para pruebas y desarrollo backend en Java.
 
-Herramientas utilizadas
+---
 
-- [VisualStudioCode] - version 1.76.0, Editor de codigo
-- [NetBeans] - Editor de codigo para Java
-- [Postman]- Plataforma API para que los desarrolladores diseñen, construyan, prueben e iteren sus APIS
-- [SpringBoot]- Euna herramienta que hace que el desarrollo de aplicaciones web y microservicios con Spring Framework sea más rápido y fácil
-- [Mysql]
-- [MysqlWorbench]
-- [Git] - version 2.34.1, Sistema de control de versiones
+## 🛠️ Construido con
 
-Versiones de Java
-- [java] - version "1.8.0_361"
-- [java] - Java(TM) SE Runtime Environment (build 1.8.0_361-b09)
-- [java] - Java HotSpot(TM) 64-Bit Server VM (build 25.361-b09, mixed mode)
+Herramientas utilizadas durante el desarrollo:
 
-## Base de datos
+- **[Visual Studio Code](https://code.visualstudio.com/)** `v1.76.0`: Editor de código ligero y potente.
+- **[NetBeans](https://netbeans.apache.org/)**: IDE especializado para desarrollo en Java.
+- **[Postman](https://www.postman.com/)**: Plataforma para pruebas de APIs REST.
+- **[Spring Boot](https://spring.io/projects/spring-boot)**: Framework para crear microservicios y aplicaciones web de forma rápida.
+- **[MySQL](https://www.mysql.com/)**: Sistema de gestión de bases de datos relacional.
+- **[MySQL Workbench](https://www.mysql.com/products/workbench/)**: Herramienta visual para modelado y administración de bases de datos.
+- **[Git](https://git-scm.com/)** `v2.34.1`: Sistema de control de versiones distribuido.
 
-Revisar Carpeta Base de Datos 
+---
 
-- [ModeloEntidadRelacion] - Modelo elaborado workbench
-- [ScriptSQL] - Codigo SQL con creacion de tablas y insert de datos.
+## ☕ Versiones de Java utilizadas
 
-## Proyecto Spring
+- `Java version "1.8.0_361"`
+- `Java(TM) SE Runtime Environment (build 1.8.0_361-b09)`
+- `Java HotSpot(TM) 64-Bit Server VM (build 25.361-b09, mixed mode)`
 
-# usar 
-> gitclone https://github.com/david99cartagena/PruebaBackendSpringBoot.git
+> ℹ️ El proyecto está configurado para ejecutarse con Java 8.
 
-Usar SpringToolSuite4 para abrir y ejecutar el proyecto
+---
 
-> Revisar el archivo PruebaBackendSpringBoot\CrudPrueba\src\main\resources\application.properties
-#
-> Ajustar la configuracion para la base de datos.
+## 🗃️ Base de Datos
+
+Consulta la carpeta `BasedeDatos` incluida en el repositorio para revisar los recursos necesarios:
+
+- **ModeloEntidadRelacion**: Diagrama E-R elaborado en MySQL Workbench.
+- **ScriptSQL**: Contiene los scripts `.sql` para la creación de tablas e inserción de datos de prueba.
+
+---
+
+## 🚀 Ejecutar el proyecto
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/david99cartagena/PruebaBackendSpringBoot.git
+```
+
+### 2. Abrir en Spring Tool Suite o IDE compatible
+
+Utiliza Spring Tool Suite 4, IntelliJ IDEA o Eclipse para importar el proyecto y ejecutarlo.
+
+### 3. Configuración de base de datos
+
+Revisa y ajusta el archivo de configuración ubicado en:
+
+```bash
+PruebaBackendSpringBoot/CrudPrueba/src/main/resources/application.properties
+```
+
+Asegúrate de establecer los valores correctos para:
+
+```bash
+spring.datasource.url=jdbc:mysql://localhost:3306/tu_base_de_datos
+spring.datasource.username=tu_usuario
+spring.datasource.password=tu_contraseña
+```
+
+💡 También puedes configurar otros parámetros como el dialecto de Hibernate, puerto del servidor, y comportamiento de creación de tablas (spring.jpa.hibernate.ddl-auto).
